@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoraStore | About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo-l.png" width="200px"></a>
+            </div>
+            <nav>
+                <ul>
+                    <h2>
+                        <strong><li><a href="index.html">Home</a></li></strong>
+                        <strong><li><a href="products.html">Products</a></li></strong>
+                        <strong><li><a href="about.html">About</a></li></strong>
+                        <strong><li><a href="contact.html">Contact</a></li></strong>
+                        <strong><li><a href="account.html">Account</a></li></strong>
+                    </h2>
+                </ul>
+            </nav>
+            <a href="cart.html"><img src="images/cart-l.png" width="50px" height="50px"></a>
+        </div>
+    </div>
+    <!-- ----------------------------------------------------contact us form ------------------------------------------------------------->
+    <div class="textx-1">
+    </div>
+    <div class="dex">
+        <div class="do-1">
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem enim possimus assumenda id<br> molestias velit doloremque non rem veritatis culpa, ex aliquam voluptates similique<br> explicabo nulla? Obcaecati in incidunt maiores.<br>                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta culpa quibusdam ipsa temporibus cumque il<br>lum aliquid non eligendi repellendus, ipsum sequi adipisci repudianda<br>e iure animi vel incidunt officiis? Tempora, voluptatum.<br>                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae quas perspiciatis fugiat<br>, ab, totam expedita molestiae veritatis libero odit maxime vitae nobis facere saepe odio quidem<br> excepturi iure alias ad.<br>
+            </p>
+        </div>
+    </div>
+    <div class="textx-1">
+    </div>
+
+    <div class="wrapper">
+        <h2>Contact Us</h2>
+        <div id="error_message"></div>
+
+        <form id="myform" onsubmit="return validation()">
+            <div class="input_field">
+                <input type="text" placeholder="Name" id="name">
+            </div>
+            <div class="input_field">
+                <input type="text" placeholder="Subject" id="subject">
+            </div>
+            <div class="input_field">
+                <input type="text" placeholder="Contact" id="contact">
+            </div>
+            <div class="input_field">
+                <input type="text" placeholder="Email" id="email">
+            </div>
+            <div class="input_field">
+                <textarea id="message" placeholder="Message"></textarea>
+            </div>
+            <div class="btn-n">
+                <input type="submit">
+            </div>
+        </form>
+    </div>
+    <!-- <div class="dex">
+        <div class="do-1">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae quas perspiciatis fugiat, ab, totam expedita molestiae veritatis libero odit maxime vitae nobis facere saepe odio quidem excepturi iure alias ad.
+            </p>
+        </div>
+    </div> -->
+    <!-- ----------------------------------------------------contact us form-end ------------------------------------------------------------->
+
+
+    <!--------------------------------------------------------------footer----------------------------------------------------------------->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- <div class="footer-col-1">
+                    <h3>Download our app</h3>
+                    <p>Download app for android and iOS mobile phone.</p>
+                    <div class="app-logo">
+                        <img src="images/play-store.png">
+                        <img src="images/app-store.png">
+                    </div>
+                </div> -->
+                <div class="footer-col-2">
+                    <img src="images/inverted-logo.png">
+                    <p>Our purpose is to sustainably make the pleasure and benefits of animation accessible to the many.</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Official Handles</h3>
+                    <ul>
+                        <strong><a href="#">Dribble</a><br></strong>
+                        <strong><a href="#">Instagram</a><br></strong>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Store Address</h3>
+
+                    <p>RZ 01 City Avenue california 20202 </p>
+                </div>
+            </div>
+            <hr>
+            <p>
+                <h2 class="terms"><strong><a href="#">TERMS & SERVICES || COPYRIGHT 2021 ❤ || BY ANONYMOUS</a></strong></h2>
+            </p>
+        </div>
+    </div>
+    <!-- --------------------------------------------------contact-us-form-validation ---------------------------------------------->
+    <script>
+        function validation() {
+            var name = document.getElementById("name").value;
+            var subject = document.getElementById("subject").value;
+            var contact = document.getElementById("contact").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+            var error_message = document.getElementById("error_message");
+            var text;
+            error_message.style.padding = "10px";
+
+            if (name.length < 2) {
+                text = "Please Enter Valid Name";
+                error_message.innerHTML = text;
+                return false;
+            }
+
+            if (subject.length < 5) {
+                text = "Please Enter at least 10 characters of subject";
+                error_message.innerHTML = text;
+                return false;
+            }
+
+            if (isNaN(contact) || contact.length != 10) {
+                text = "Please Enter valid Contact No.";
+                error_message.innerHTML = text;
+                return false;
+            }
+
+            if (email.indexOf("@") == -1 || email.length < 6) {
+                text = "Please Enter valid Email Address";
+                error_message.innerHTML = text;
+                return false;
+            }
+
+            if (message.length <= 15) {
+                text = "Please Enter at least 15 characters of message";
+                error_message.innerHTML = text;
+                return false;
+            }
+            alert("Form Submitted Successfully!")
+            return true;
+        }
+    </script>
+    <!-- --------------------------------------------------contact-us-form-validation-end ---------------------------------------------->
+
+</body>
+
+</html>
